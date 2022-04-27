@@ -2,3 +2,12 @@ SELECT traductions.client AS client_id, clients.name, clients.prenom, clients.te
 FROM traductions , documents, produits , clients
 WHERE traductions.client=clients.id AND documents.traduction=traductions.id and documents.produit=produits.id 
 ORDER by traductions.created_at
+
+
+select clients.name as Nom, clients.prenom as Prenom, clients.telephone, DATE(traductions.created_at) as date,traductions.total ,traductions.versement,traductions.state,traductions.regle
+
+FROM traductions,clients
+
+WHERE traductions.client=clients.id 
+and EXTRACT(MONTH FROM traductions.created_at) = 03 and EXTRACT(year FROM traductions.created_at) = 2022
+ORDER by traductions.created_at
