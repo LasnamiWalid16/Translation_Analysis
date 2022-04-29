@@ -1,4 +1,4 @@
-SELECT traductions.client AS client_id, clients.name, clients.prenom, clients.telephone, traductions.id AS traduction_id, traductions.created_at, documents.produit as id_document ,produits.nom as document, documents.prix,documents.langue, documents.nbcopie
+SELECT traductions.client AS client_id, clients.name, clients.prenom, clients.telephone, traductions.id AS traduction_id, traductions.created_at, documents.produit as id_document ,produits.nom as document, documents.prix,documents.langue, documents.nbcopie, documents.nbimprimer
 FROM traductions , documents, produits , clients
 WHERE traductions.client=clients.id AND documents.traduction=traductions.id and documents.produit=produits.id 
 ORDER by traductions.created_at
